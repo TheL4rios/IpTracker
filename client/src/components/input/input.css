@@ -1,0 +1,42 @@
+button img {
+    width: 16px;
+    transform: rotate(-90deg);
+}
+
+button {
+    width: 50px;
+    height: 40px;
+    border: 0px solid;
+    border-radius: 0 10px 10px 0;
+    background-color: black;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:active {
+    transition: 0.5s;
+    transform: scale(0.9);
+}
+
+input {
+    border-radius: 10px 0 0 10px;
+    border: 0px solid;
+    padding-left: 20px;
+    height: 40px;
+    width: 400px;
+}
+
+#input {
+    display: flex;
+    align-items: center;
+}
+
+input, button {
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}

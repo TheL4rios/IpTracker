@@ -1,0 +1,10 @@
+#data-container {
+    width: 60vw;
+    height: 25vh;
+    border-radius: 25px 25px 25px 25px;
+    background-color: white;
+    position: absolute;
+    left: 20vw;
+    top: 27.5vh;
+    display: flex;
+}

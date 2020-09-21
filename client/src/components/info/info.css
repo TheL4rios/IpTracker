@@ -1,0 +1,15 @@
+#info-container {
+    width: 15vw;
+    height: 25vh;
+    text-align: left;
+}
+
+#info-container p {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+#info-container h3 {
+    margin-left: 20px;
+}
