@@ -7,4 +7,5 @@
     left: 20vw;
     top: 27.5vh;
     display: flex;
+    z-index: 2;
 }
