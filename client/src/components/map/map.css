@@ -3,3 +3,7 @@
     height: 60vh;
     z-index: 1;
 }
+
+img {
+    width: 32px;
+}
