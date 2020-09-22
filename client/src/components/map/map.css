@@ -4,6 +4,12 @@
     z-index: 1;
 }
 
+#map-component {
+    width: 100vw;
+    height: 60vh;
+    z-index: 1;
+}
+
 img {
     width: 32px;
 }

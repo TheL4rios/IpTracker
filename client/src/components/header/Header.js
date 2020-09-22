@@ -1,13 +1,14 @@
 import React from 'react';
+import Input from '../input/Input';
 import './header.css';
-import InputHeader from '../input-header/InputHeader';
 
-function Header() {
+function InputHeader() {
     return (
-        <div id="container">
-            <InputHeader/>
+        <div id="input-container">
+            <h1>Localización de IP</h1>
+            <Input/>
         </div>
     );
 }
 
-export default Header;
+export default InputHeader;

@@ -1,50 +1,39 @@
 import React from 'react';
-import GoogleMapReact from 'google-map-react';
+import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
 import './map.css';
 import store from '../../store';
-import icon from '../../assets/marker.png'
 
-const Marker = () => <div><img src={icon} alt='x'/></div>;
-
-class Map extends React.Component {
+class MapC extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            center: {
-                lat: 59.95,
-                lng: 30.33
-            }
+            center: [51.95, 30.33],
+            ip: 'Ubicación por default'
         };
 
         store.subscribe(() => {
             this.setState({
-                center: {
-                    lat: store.getState().ll[0],
-                    lng: store.getState().ll[1]
-                }
+                center: store.getState().ll,
+                ip: store.getState().ip
             });
         });
     }
 
-    static defaultProps = {
-        zoom: 11
-    };
-
     render() {
         return(
             <div id="map">
-                <GoogleMapReact
-                    bootstrapURLKeys = {{key: "AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik"}}
-                    center = {this.state.center}
-                    defaultZoom = {this.props.zoom}
-                >
-                    <Marker
-                        lat={this.state.center.lat}
-                        lng={this.state.center.lng}/>
-                </GoogleMapReact>
+                <Map center={this.state.center} id="map-component" zoom={13}>
+                    <TileLayer
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+                    />
+                    <Marker position={this.state.center}>
+                        <Popup>{this.state.ip}</Popup>
+                    </Marker>
+                </Map>
             </div>
         );
     }
 }
 
-export default Map;
+export default MapC;
