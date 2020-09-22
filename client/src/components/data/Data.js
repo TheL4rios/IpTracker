@@ -2,6 +2,7 @@ import React from 'react';
 import './data.css';
 import Info from '../info/Info';
 import store from '../../store';
+import MediaQuery from 'react-responsive';
 
 class Data extends React.Component {
     constructor(props) {
@@ -26,10 +27,20 @@ class Data extends React.Component {
     render() {
         return(
             <div id="data-container">
-                <Info title="Dirección IP" data={this.state.ip}/>
-                <Info title="Ubicación" data={this.state.location}/>
-                <Info title="Zona horaria" data={this.state.zone}/>
-                <Info title="Area" data={this.state.area}/>
+                <MediaQuery minDeviceWidth={947}>
+                    <Info title="Dirección IP" data={this.state.ip}/>
+                    <Info title="Ubicación" data={this.state.location}/>
+                    <Info title="Zona horaria" data={this.state.zone}/>
+                    <Info title="Area" data={this.state.area}/>
+                </MediaQuery>
+                <MediaQuery maxDeviceWidth={947}>
+                    <div id="text-container">
+                        <p>Ip: {this.state.ip}</p>
+                        <p>Ubicación: {this.state.location}</p>
+                        <p>Zona horaria: {this.state.zone}</p>
+                        <p>Área: {this.state.area}</p>
+                    </div>
+                </MediaQuery>
             </div>
         );
     }

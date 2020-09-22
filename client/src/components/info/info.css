@@ -13,3 +13,9 @@
 #info-container h3 {
     margin-left: 20px;
 }
+
+@media (max-width: 1058px) {
+    p, h3 {
+        font-size: 1em;
+    }
+}

@@ -7,5 +7,11 @@
     left: 20vw;
     top: 32vh;
     display: flex;
+    flex-wrap: wrap;
     z-index: 2;
+}
+
+#data-container #text-container {
+    margin: auto 0;
+    margin-left: 2vw;
 }
